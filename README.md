@@ -5,7 +5,7 @@ The following allows you to test your internet speed in set intervals, write the
 
 Follow these steps to set you up:
 
-## 0) A running linux enginge with python (should be included in most distros)
+## 0) Running linux enginge with python (should be included in most distros) and established internet connection
 I am running it on a RaspberryPi using Raspbian 10 Buster. Check what OS you are running with 
 ```
 cat /etc/os-release
@@ -24,7 +24,7 @@ For the rest of this readme every command is given presuming you are in this dir
 This project uses speedtest.py from https://github.com/sivel/speedtest-cli . You can get it using wget and make it executable:
 ```
 wget https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
-chmod +x speedtest.py
+sudo chmod +x speedtest.py
 ```
 Testing it with 
 ```
@@ -69,7 +69,7 @@ sudo apt-get install gnuplot
 ```
 Get the gnuplot script i prepared 
 ```
-wget 
+wget https://raw.githubusercontent.com/MOTSM-HD/auto-speedtest-log/master/gnuplot_speedtest
 ```
 and customize it according to your needs, especially the working directory. See comments in script.
 ## 4) set up scheduled tasks using cron
