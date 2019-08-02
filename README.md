@@ -23,7 +23,7 @@ For the rest of this readme every command is given presuming you are in this dir
 ## 1) Implementing speedtest.py
 This project uses speedtest.py from https://github.com/sivel/speedtest-cli . You can get it using wget and make it executable:
 ```
-wget https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+wget -O https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 sudo chmod +x speedtest.py
 ```
 Testing it with 
@@ -71,7 +71,7 @@ sudo apt-get install gnuplot
 ```
 Get the gnuplot script i prepared 
 ```
-wget https://raw.githubusercontent.com/MOTSM-HD/auto-speedtest-log/master/gnuplot_speedtest
+wget -O https://raw.githubusercontent.com/MOTSM-HD/auto-speedtest-log/master/gnuplot_speedtest
 ```
 and customize it according to your needs, especially the working directory. See comments in script.
 ## 4) set up scheduled tasks using cron
