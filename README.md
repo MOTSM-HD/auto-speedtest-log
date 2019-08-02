@@ -61,7 +61,9 @@ cat speedtest.log
 Server ID,Sponsor,Server Name,Timestamp,Distance,Ping,Download,Upload,Share,IP Address
 10010,[sponsor.url],[location],2019-08-02T19:51:52.311122Z,13.089912652947309,28.738,12271838.6438877,5826553.658862884,,IP.##.##.##
 ```
-That is the beginning of you logfile. If you want to empty it again simply overwrite it with the csv headers: `./speedtest.py --csv-header > speedtest.log`. _(note: `>` overwrites the file, `>>` appends a line to the file, be careful)_
+That is the beginning of you logfile. __Note: the timestamp in the logfiles is in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)!__
+
+If you want to empty it again simply overwrite it with the csv headers: `./speedtest.py --csv-header > speedtest.log`. _(note: `>` overwrites the file, `>>` appends a line to the file, be careful)_
 ## 3) Install gnuplot and the gnuplot script
 On debian based distributions (like Raspbian) install gnuplot using:
 ```
