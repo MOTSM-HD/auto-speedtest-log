@@ -86,3 +86,8 @@ The first will run the speedtest python script and append its csv output to the 
 
 The second will run gnuplot using the given script once a day, in this case every night at 02:05 am. The results will be one plot for the last 24 hours as .png file per day.
 
+To test if cron executes the speedtest and not have to wait for up to 30 minutes you can shorten the interval:
+```
+*/5 * * * * /path/to/speedtest/speedtest.py --csv >> /path/to/speedtest/speedtest.log
+```
+This way cron executes the speedtest every 5 minutes. With `stat speedtest.log` you can check when the file was last edited.
