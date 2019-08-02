@@ -30,7 +30,7 @@ set style line 3 lt rgb "green" lw 3
 set term png size 1200, 800 # define the desired method for output / export
 set output ofname . '.png' # set output filename using the ofname variable creating the mm_dd.png
 
-# During the plot command we have to calculate the byte/second from the logfile into Mbit/second. Thats what the *0.0000009537 is for.
+# During the plot command we have to calculate the bits/second from the logfile into Mbit/second. Thats what the *0.0000009537 is for.
 # 
 # different possible plots i've tried, feel free to try and change them. The last one (uncommented) is the one used for the given example.png.
 # 
