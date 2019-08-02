@@ -22,7 +22,7 @@ Im Rest dieser Anleitung wird angenommen, dass man sich in diesem Verzeichnis be
 ## 1) speedtest.py installieren
 Dieses Projekt benutzt speedtest.py von https://github.com/sivel/speedtest-cli . Man kann es herunterladen und ausführbar machen mit:
 ```
-wget https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+wget -O https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
 sudo chmod +x speedtest.py
 ```
 Zum Testen kann man es ausführen: 
@@ -70,7 +70,7 @@ sudo apt-get install gnuplot
 ```
 Herunterladen des vorbereiteten gnuplot-scripts: 
 ```
-wget https://raw.githubusercontent.com/MOTSM-HD/auto-speedtest-log/master/gnuplot_speedtest
+wget -O https://raw.githubusercontent.com/MOTSM-HD/auto-speedtest-log/master/gnuplot_speedtest
 ```
 das script muss entsprechend den eigenen Anforderungen angepasst werden, insbesondere das Arbeitsverzeichnis (working directory). Englische Kommentare sind zur Erläuterung in dem script vorhanden. 
 
