@@ -1,0 +1,43 @@
+reset
+
+# set up variables and environment
+cd "/path/to/speedtest" # change to working directory
+t0 = (system("date -d 'now' +%s")-86400) # start time = now - 24h
+t1 = (system("date -d 'now' +%s")-0) # end time = now
+inputf = "speedtest.log" # logfile to read from
+ofname = strftime("%m_%d",system("date -d 'now' +%s")-0) #creating string for output file name result: mm_dd.png
+
+# set up data format
+set xdata time # set data format for x-values as "time!
+set timefmt "%Y-%m-%dT%H:%M:%SZ" #time format as in the logfile (telling gnuplot how to read from it)
+set format x "%d.%m.%y %H:%M" # presented time format on the plot
+set datafile separator "," 
+
+# set up the scales
+set autoscale
+set ylabel "Mbit/s"
+set y2label "ms"
+set y2tics auto
+set ytics auto
+set xrange [t0:t1]
+
+# set up the line styles
+set style line 1 lt rgb "grey" lw 1 # long version: set style line 1 linetype rgb "grey" linewidth 1
+set style line 2 lt rgb "red" lw 3
+set style line 3 lt rgb "green" lw 3
+
+# set up the output
+set term png size 1200, 800 # define the desired method for output / export
+set output ofname . '.png' # set output filename using the ofname variable creating the mm_dd.png
+
+# During the plot command we have to calculate the byte/second from the logfile into Mbit/second. Thats what the *0.0000009537 is for.
+# 
+# different possible plots i've tried, feel free to try and change them. The last one (uncommented) is the one used for the given example.png.
+# 
+# plot "log2145.csv" u 4:6 w lp title "Ping" axes x1y2, "log2145.csv" u 4:($7*0.0000009537) axes x1y1 title "Down" w lp, "log2145.csv" u 4:($8*0.0000009537) axes x1y1 title "Up" w lp
+#
+# plot inputf u 4:6 w lp title "Ping" axes x1y2, inputf u 4:($7*0.0000009537) axes x1y1 title "Down" w lp, inputf u 4:($8*0.0000009537) axes x1y1 title "Up" w lp
+#
+#plot inputf u 4:6 w steps title "Ping" axes x1y2, inputf u 4:($7*0.0000009537) axes x1y1 title "Down" w steps, inputf u 4:($8*0.0000009537) axes x1y1 title "Up" w steps
+#
+plot inputf u 4:6 w lines ls 1 title "Ping" axes x1y2, inputf u 4:($7*0.0000009537) axes x1y1 title "Down" w lines ls 3, inputf u 4:($8*0.0000009537) axes x1y1 title "Up" w lines ls 2
